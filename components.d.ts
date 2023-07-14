@@ -16,6 +16,7 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElPopover: typeof import('element-plus/es')['ElPopover']
     EndNode: typeof import('./src/components/EndNode.vue')['default']
     IEpArrowRight: typeof import('~icons/ep/arrow-right')['default']
     IEpAvatar: typeof import('~icons/ep/avatar')['default']
