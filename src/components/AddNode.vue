@@ -3,19 +3,19 @@
     <div class="line"></div>
     <el-popover placement="right" :width="250" trigger="click">
       <div class="operate">
-        <div class="item">
+        <div class="item" @click="addAudit">
           <div class="icon-wrap audit">
             <i class="iconfont icon-shenpi"></i>
           </div>
           <span>审批人</span>
         </div>
-        <div class="item">
+        <div class="item" @click="addWrite">
           <div class="icon-wrap write">
             <i class="iconfont icon-wodechaosong"></i>
           </div>
           <span>抄送人</span>
         </div>
-        <div class="item">
+        <div class="item" @click="addBranch">
           <div class="icon-wrap condition">
             <i class="iconfont icon-gongzuoliuchengtu"></i>
           </div>
@@ -35,8 +35,20 @@
 /* ts类型定义区域 */
 
 /* 定义数据区域 */
+const emits = defineEmits(['addAudit','addWrite','addBranch'])
 
 /* 事件处理区域 */
+const addAudit = () => {
+  emits("addAudit")
+}
+
+const addWrite = () => {
+  emits("addWrite")
+}
+
+const addBranch = () => {
+  emits("addBranch")
+}
 
 /* 监听 */
 
@@ -51,6 +63,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  background-color: #f5f5f7;
 
   .line {
     width: 2px;

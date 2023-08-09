@@ -35,6 +35,9 @@ export default defineConfig({
       autoInstall: true
     })
   ],
+  server: {
+    port: 9001
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
