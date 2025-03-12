@@ -2,6 +2,9 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+![Kapture 2025-03-12 at 11 29 16](https://github.com/user-attachments/assets/ba1640af-6045-4f56-8288-0716b246ebbc)
+
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
