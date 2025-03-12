@@ -28,8 +28,8 @@ const workflow = useWorkflow()
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1700px;
-  height: 2000px;
+  width: 100%;
+  min-height: 100vh;
   cursor: grab;
   overflow: auto;
   background-color: #f5f5f7;

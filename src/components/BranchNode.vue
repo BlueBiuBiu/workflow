@@ -34,8 +34,9 @@ import NodeWrap from '@/components/NodeWrap.vue';
       </div>
     </div>
   </div>
-  <AddNode />
-  <NodeWrap v-if="nodeConfig.childNode" :nodeConfig="nodeConfig.childNode" :is-branch="true" />
+  <AddNode @add-branch="addOtherBranch2" @add-audit="addAudit2" @add-write="addWrite2" />
+
+  <!-- <NodeWrap v-if="nodeConfig.childNode" :nodeConfig="nodeConfig.childNode" /> -->
 </template>
 
 <script setup lang="ts">
@@ -47,9 +48,14 @@ import { useAddNode } from '@/hooks/use-add-node'
 /* 定义数据区域 */
 const props = defineProps<{ nodeConfig: Partial<INodeConfig> }>()
 const newNodeConfig = ref<any>()
-
+const {
+  addAudit: addAudit2,
+  addOtherBranch: addOtherBranch2,
+  addWrite: addWrite2
+} = useAddNode(newNodeConfig)
 /* 事件处理区域 */
 // 给条件分支的添加条件
+
 const addBranch = () => {
   newNodeConfig.value.conditionNodes.push({
     nodeName: '条件',
@@ -79,7 +85,7 @@ const addOtherBranch = (index: number) => {
       }
     ],
     childNode: {
-      ...newNodeConfig.value.childNode
+      ...newNodeConfig.value.conditionNodes[index].childNode
     }
   }
 }
@@ -91,7 +97,7 @@ const addAudit = (index: number) => {
     nodeName: '我是审核人',
     content: '嘿咻',
     childNode: {
-      ...newNodeConfig.value.childNode
+      ...newNodeConfig.value.conditionNodes[index].childNode
     }
   }
 }
@@ -103,7 +109,7 @@ const addWrite = (index: number) => {
     nodeName: '我是抄写人',
     content: '哈哈哈哈',
     childNode: {
-      ...newNodeConfig.value.childNode
+      ...newNodeConfig.value.conditionNodes[index].childNode
     }
   }
 }

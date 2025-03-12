@@ -35,19 +35,21 @@
 /* ts类型定义区域 */
 
 /* 定义数据区域 */
-const emits = defineEmits(['addAudit','addWrite','addBranch'])
+const emits = defineEmits(['addAudit', 'addWrite', 'addBranch'])
 
 /* 事件处理区域 */
 const addAudit = () => {
-  emits("addAudit")
+  console.log('-------42')
+
+  emits('addAudit')
 }
 
 const addWrite = () => {
-  emits("addWrite")
+  emits('addWrite')
 }
 
 const addBranch = () => {
-  emits("addBranch")
+  emits('addBranch')
 }
 
 /* 监听 */
@@ -89,7 +91,7 @@ const addBranch = () => {
     border-radius: 5px;
 
     &:hover {
-      background-color: rgba(31,35,41,.08);
+      background-color: rgba(31, 35, 41, 0.08);
     }
 
     .icon-wrap {
